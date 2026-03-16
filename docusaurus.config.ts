@@ -55,6 +55,10 @@ const config: Config = {
           position: 'left',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/YOUR_GITHUB_USERNAME/dotori-portfolio',
           label: 'GitHub',
           position: 'right',

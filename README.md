@@ -24,6 +24,14 @@ npm run start
 - `projectName`: `<repo-name>`
 - navbar의 GitHub 링크
 
+
+## 다국어 지원
+
+- 기본 언어: 한국어(`ko`)
+- 추가 언어: 영어(`en`)
+- 네비게이션 우측의 언어 드롭다운에서 전환할 수 있습니다.
+- 영어 문서는 `i18n/en/docusaurus-plugin-content-docs/current/`에서 관리합니다.
+
 ## 4) 배포
 
 ### 방법 A: GitHub Actions (권장)
