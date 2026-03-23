@@ -1,0 +1,10 @@
+.card { border: 1px solid var(--ifm-color-emphasis-300); border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: box-shadow 0.2s, transform 0.2s; }
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(-2px); }
+.title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.period { font-size: 0.85rem; color: var(--ifm-color-emphasis-600); margin-bottom: 0.75rem; }
+.description { font-size: 0.95rem; margin-bottom: 1rem; }
+.techStack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.tag { background: var(--ifm-color-primary-lightest); color: var(--ifm-color-primary-darkest); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: 500; }
+.links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+[data-theme='dark'] .card { border-color: var(--ifm-color-emphasis-400); }
+[data-theme='dark'] .tag { background: var(--ifm-color-primary-dark); color: white; }

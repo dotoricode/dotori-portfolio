@@ -1,7 +1,34 @@
 {
-  "title": "Dotori Portfolio",
-  "items": {
-    "intro": "Intro",
-    "github": "GitHub"
+  "title": {
+    "message": "Dotori Portfolio",
+    "description": "The title in the navbar"
+  },
+  "item.label.소개": {
+    "message": "Intro",
+    "description": "Navbar item with label 소개"
+  },
+  "item.label.자기소개": {
+    "message": "About",
+    "description": "Navbar item with label 자기소개"
+  },
+  "item.label.프로젝트": {
+    "message": "Projects",
+    "description": "Navbar item with label 프로젝트"
+  },
+  "item.label.기술스택": {
+    "message": "Skills",
+    "description": "Navbar item with label 기술스택"
+  },
+  "item.label.경력": {
+    "message": "Career",
+    "description": "Navbar item with label 경력"
+  },
+  "item.label.연락처": {
+    "message": "Contact",
+    "description": "Navbar item with label 연락처"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
   }
 }

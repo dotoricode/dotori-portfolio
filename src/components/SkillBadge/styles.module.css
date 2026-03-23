@@ -1,0 +1,13 @@
+.badge { display: inline-flex; align-items: center; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin: 0.25rem; }
+.badge--language { background: #dbeafe; color: #1e40af; }
+.badge--framework { background: #dcfce7; color: #166534; }
+.badge--tool { background: #fef3c7; color: #92400e; }
+.badge--database { background: #fce7f3; color: #9d174d; }
+.badge--other { background: #f3f4f6; color: #374151; }
+.categoryGroup { margin-bottom: 1.5rem; }
+.categoryTitle { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: capitalize; color: var(--ifm-color-emphasis-800); }
+[data-theme='dark'] .badge--language { background: #1e3a8a; color: #bfdbfe; }
+[data-theme='dark'] .badge--framework { background: #14532d; color: #bbf7d0; }
+[data-theme='dark'] .badge--tool { background: #78350f; color: #fde68a; }
+[data-theme='dark'] .badge--database { background: #831843; color: #fbcfe8; }
+[data-theme='dark'] .badge--other { background: #374151; color: #d1d5db; }

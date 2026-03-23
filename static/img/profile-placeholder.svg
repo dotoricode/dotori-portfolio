@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <circle cx="64" cy="64" r="64" fill="#5b7cfa"/>
+  <!-- 머리 -->
+  <circle cx="64" cy="45" r="20" fill="white"/>
+  <!-- 어깨/몸통 -->
+  <ellipse cx="64" cy="95" rx="30" ry="20" fill="white"/>
+</svg>
