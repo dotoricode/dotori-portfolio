@@ -1,70 +1,114 @@
-# Dotori Portfolio (Docusaurus + GitHub Pages)
+# Dotori Portfolio
 
-Docusaurus 기반 GitHub Pages용 포트폴리오 템플릿입니다.
+Docusaurus 3.8.1 기반 개인 포트폴리오 사이트. GitHub Pages로 배포됩니다.
 
-## 1) 설치
+## 구성
+
+| 페이지 | 경로 | 설명 |
+|--------|------|------|
+| 메인 | `/` | 히어로 섹션 (프로필, CTA 버튼) |
+| 자기소개 | `/about` | 소개, 핵심 역량, 관심 분야 |
+| 프로젝트 | `/projects` | 프로젝트 카드 그리드 쇼케이스 |
+| 기술스택 | `/skills` | 카테고리별 기술 뱃지 |
+| 경력 | `/career` | 수직 타임라인 경력 정보 |
+| 연락처 | `/contact` | 이메일, GitHub, LinkedIn |
+
+## 빠른 시작
 
 ```bash
 npm install
-```
-
-## 2) 로컬 실행
-
-```bash
 npm run start
 ```
 
-## 3) GitHub Pages 설정 전 필수 수정
+## 개인 정보 설정
 
-`docusaurus.config.ts`의 아래 값을 본인 정보로 바꿔주세요.
+배포 전 아래 파일들을 본인 정보로 수정하세요:
 
-- `url`: `https://<github-username>.github.io`
-- `baseUrl`: `/<repo-name>/`
-- `organizationName`: `<github-username>`
-- `projectName`: `<repo-name>`
-- navbar의 GitHub 링크
+**`docusaurus.config.ts`**
+```ts
+url: 'https://<github-username>.github.io',
+baseUrl: '/<repo-name>/',
+organizationName: '<github-username>',
+projectName: '<repo-name>',
+```
 
+**콘텐츠 파일**
+- `src/pages/index.tsx` — 이름, 직함, 소개 문구
+- `src/data/projects.ts` — 프로젝트 목록
+- `src/data/skills.ts` — 기술 스택
+- `src/data/career.ts` — 경력 사항
+- `docs/about.md` — 자기소개
+- `docs/contact.md` — 연락처
+- `static/img/profile-placeholder.svg` — 프로필 이미지
 
-## 다국어 지원
+## 배포
 
-- 기본 언어: 한국어(`ko`)
-- 추가 언어: 영어(`en`)
-- 네비게이션 우측의 언어 드롭다운에서 전환할 수 있습니다.
-- 영어 문서는 `i18n/en/docusaurus-plugin-content-docs/current/`에서 관리합니다.
+### GitHub Actions (권장)
 
-## 4) 배포
+1. GitHub 저장소 **Settings > Pages** → Source를 `GitHub Actions`로 설정
+2. `main` 브랜치에 푸시하면 자동 배포
 
-### 방법 A: GitHub Actions (권장)
-
-이미 `.github/workflows/deploy.yml`이 포함되어 있습니다.
-
-1. GitHub 저장소에서 **Settings > Pages** 이동
-2. **Build and deployment**를 `GitHub Actions`로 설정
-3. `main` 브랜치에 푸시하면 자동 배포
-
-### 방법 B: CLI 배포
+### 수동 배포
 
 ```bash
 GIT_USER=<github-username> npm run deploy
 ```
 
-## 문서 추가
+## 기술 스택
 
-`docs/` 폴더에 Markdown 파일을 추가하면 자동으로 사이드바에 반영됩니다.
+- **프레임워크:** Docusaurus 3.8.1
+- **언어:** TypeScript, React 18
+- **배포:** GitHub Pages + GitHub Actions
+- **다국어:** 한국어(기본), 영어
 
+## 다국어 지원
+
+- 기본 언어: 한국어(`ko`)
+- 추가 언어: 영어(`en`) — 네비게이션 우측 언어 드롭다운으로 전환
+- 영어 문서: `i18n/en/docusaurus-plugin-content-docs/current/`
+
+## 프로젝트 구조
+
+```
+dotori-portfolio/
+├── docs/                    # 포트폴리오 페이지 (Markdown/MDX)
+│   ├── about.md
+│   ├── projects.mdx
+│   ├── skills.mdx
+│   ├── career.mdx
+│   ├── contact.md
+│   └── DEVELOPMENT_LOG.md  # 개발 작업 로그
+├── src/
+│   ├── components/          # React 컴포넌트
+│   │   ├── ProjectCard/
+│   │   ├── SkillBadge/
+│   │   └── Timeline/
+│   ├── data/                # 정적 데이터
+│   │   ├── projects.ts
+│   │   ├── skills.ts
+│   │   └── career.ts
+│   ├── css/custom.css       # 전역 스타일
+│   └── pages/index.tsx      # 메인 히어로 페이지
+├── static/img/              # 이미지 파일
+└── .github/workflows/       # GitHub Actions 배포 워크플로우
+```
 
 ## 트러블슈팅
 
-### "바이너리 파일 지원되지 않음" 에러가 날 때
+### 빌드 오류 시
 
-일부 코드리뷰/패치 도구는 `*.ico` 같은 바이너리 파일 diff를 제대로 처리하지 못합니다.
-이 저장소는 해당 문제를 피하기 위해 텍스트 기반인 `static/img/favicon.svg`를 사용합니다.
+```bash
+npm run build
+```
 
-이미 바이너리 파일이 커밋된 상태라면 아래처럼 교체 후 다시 커밋하세요.
+오류 메시지를 확인하세요. MDX 파일의 import 경로가 `@site/src/...` 형태인지 확인하세요.
+
+### 바이너리 파일 관련 오류
+
+이 저장소는 텍스트 기반 `static/img/favicon.svg`를 사용합니다. `.ico` 등 바이너리 파일이 필요한 경우:
 
 ```bash
 git rm --cached static/img/favicon.ico
-# svg 파일 추가/수정
-git add static/img/favicon.svg docusaurus.config.ts
+git add static/img/favicon.svg
 git commit -m "Replace binary favicon with svg"
 ```
